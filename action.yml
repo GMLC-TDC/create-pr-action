@@ -1,13 +1,29 @@
 name: 'Create File Update PR'
 description: 'Pushes a new branch with changed files and opens a PR for updating the changed files in the base branch'
 inputs:
-  no-hash: # turn off inclusion of the hash in the created branch name
+  commit_msg:
+    description: 'Commit message for the file changes'
+    default: 'Automatted update to changed files'
+  pr_title:
+    description: 'PR Title for updating the changed files'
+    default: 'Automatted update to changed files'
+  pr_body:
+    description: 'PR Body for updating the changed files'
+    default: 'Automatted update to changed files'
+  git_email:
+    description: 'Email to use for changed files commit'
+  git_name:
+    description: 'Name to use for changed files commit'
+  branch_prefix:
+    description: 'The prefix to add to branches created'
+    default: 'create-pr-action/'
+  no_hash: # turn off inclusion of the hash in the created branch name
     description: 'Do not include the changed file hash in the PR branch name'
     default: false
-  replace-branch: # if a PR branch already exists, replaces it with updated contents
+  replace_branch: # if a PR branch already exists, replaces it with updated contents
     description: 'Replace the contents of an existing PR branch of the same name'
     default: false
-  disable-staging: # disables automatic git staging of all changed files
+  disable_staging: # disables automatic git staging of all changed files
     description: 'Disable automatically staging all changed files'
     default: false
 runs:
