@@ -3,13 +3,13 @@ description: 'Pushes a new branch with changed files and opens a PR for updating
 inputs:
   commit_msg:
     description: 'Commit message for the file changes'
-    default: 'Automatted update to changed files'
+    default: 'Automated update to changed files'
   pr_title:
     description: 'PR Title for updating the changed files'
-    default: 'Automatted update to changed files'
+    default: 'Automated update to changed files'
   pr_body:
     description: 'PR Body for updating the changed files'
-    default: 'Automatted update to changed files'
+    default: 'Automated update to changed files'
   git_email:
     description: 'Email to use for changed files commit'
   git_name:
