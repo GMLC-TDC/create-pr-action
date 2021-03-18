@@ -28,8 +28,12 @@ if [[ "$files_changed" != "" ]]; then
 
     # Set the git origin url for committing using a GITHUB_TOKEN
     git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}"
-    git config user.name "${INPUT_GIT_NAME}"
-    git config user.email "${INPUT_GIT_EMAIL}"
+    if [[ "${INPUT_GIT_NAME}" != "" ]]; then
+      git config user.name "${INPUT_GIT_NAME}"
+    fi
+    if [[ "${INPUT_GIT_EMAIL}" != "" ]]; then
+      git config user.email "${INPUT_GIT_EMAIL}"
+    fi
 
     # Construct the branch name with the changes for a PR
     pr_branch="${INPUT_BRANCH_PREFIX}update-${current_branch}"
